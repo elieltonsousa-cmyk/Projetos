@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@application.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
+   <children>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="400.0" spacing="15.0" styleClass="login-panel">
+         <children>
+            <Label styleClass="title" text="Login">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <VBox spacing="5.0">
+               <children>
+                  <Label text="Seu e-mail" />
+                  <TextField fx:id="txtEmail" promptText="contato@htmlecsspro.com" styleClass="text-field" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0">
+               <children>
+                  <Label text="Sua senha" />
+                  <StackPane>
+                     <children>
+                        <PasswordField fx:id="txtSenha" promptText="1234" styleClass="password-field" />
+                        <TextField fx:id="visiblePasswordField" managed="false" promptText="1234" styleClass="text-field" visible="false" />
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <CheckBox fx:id="showPasswordCheckBox" mnemonicParsing="false" text="Manter-me logado" />
+               </children>
+            </HBox>
+            <Button fx:id="btnEntrar" onAction="#fazerLogin" styleClass="login-button" text="Logar" />
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label text="Ainda não tem conta?" />
+                  <Button fx:id="hlCadastrar" onAction="#abrirCadastro" styleClass="register-button" text="Cadastre-se" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <Button onAction="#esqueciSenha" styleClass="link-button" text="Esqueci minha senha" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</StackPane>

@@ -1,0 +1,114 @@
+.root {
+    -fx-background-color: #f0f0f0; /* Light gray background */
+}
+
+.login-panel {
+    -fx-background-color: #ffffff; /* White panel background */
+    -fx-background-radius: 8px;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 8px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}
+
+.title {
+    -fx-text-fill: #2c7a7b; /* Dark teal/green for title */
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-padding: 0 0 10px 0;
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-color: #e0e0e0;
+}
+
+.label {
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+}
+
+.text-field, .password-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px;
+}
+
+.login-button {
+    -fx-background-color: #2c7a7b; /* Teal/blue for login button */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.login-button:hover {
+    -fx-background-color: #246364;
+}
+
+.register-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2c7a7b; /* Teal/green for register link */
+    -fx-font-weight: bold;
+    -fx-underline: true;
+    -fx-cursor: hand;
+}
+
+.register-button:hover {
+    -fx-text-fill: #246364;
+}
+
+.link-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #666666; /* Gray for forgot password link */
+    -fx-underline: true;
+    -fx-cursor: hand;
+}
+
+.link-button:hover {
+    -fx-text-fill: #333333;
+}
+
+.check-box {
+    -fx-text-fill: #333333;
+}
+
+/* Original styles from application.css, adapted or removed if conflicting */
+.root{
+	/* -fx-background-image: url("https://th.bing.com/th/id/R.03274496350d7f849dc043a4a75b34a2?rik=QfH6%2bYnL%2b2Gzvw&pid=ImgRaw&r=0"); */
+	/* -fx-background-size: cover; */
+}
+
+/* .label{
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-font-size: 12;
+} */
+
+/* .button{
+	-fx-background-color: #4267B2;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+} */
+
+/* .text-field{
+	-fx-background-color: white;
+	-fx-text-fill: black;
+	-fx-font-weight: bold;
+} */
+
+/* .hyperlink{
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+} */
+
+.transparent-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.transparent-button .image-view {
+    -fx-fit-width: 30px;
+    -fx-fit-height: 30px; 
+}
