@@ -33,4 +33,12 @@ public class UsuarioService {
     public Map<String, Map<String, String>> getAllUsers() {
         return usuarios;
     }
+
+    public String getSenhaPorEmail(String email) {
+        Map<String, String> dadosUsuario = usuarios.get(email);
+        if (dadosUsuario != null) {
+            return dadosUsuario.get("senha");
+        }
+        return null;
+    }
 }

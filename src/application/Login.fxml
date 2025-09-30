@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -52,7 +53,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </HBox>
-            <Button onAction="#esqueciSenha" styleClass="link-button" text="Esqueci minha senha" />
+            <Hyperlink fx:id="hlEsqueciSenha" onAction="#esqueciSenha" styleClass="link-button" text="Esqueci minha senha" />
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
