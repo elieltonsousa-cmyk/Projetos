@@ -40,7 +40,7 @@
             </VBox>
             <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="5.0">
                <children>
-                  <CheckBox fx:id="showPasswordCheckBox" mnemonicParsing="false" text="Manter-me logado" />
+                  <CheckBox fx:id="showPasswordCheckBox" mnemonicParsing="false" text="Mostrar senha" />
                </children>
             </HBox>
             <Button fx:id="btnEntrar" onAction="#fazerLogin" styleClass="login-button" text="Logar" />

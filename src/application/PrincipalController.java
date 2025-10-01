@@ -146,6 +146,7 @@ public class PrincipalController {
         System.out.println("Excluir usuário");
     }
 
+
     public static class User {
         private final SimpleStringProperty name;
         private final SimpleStringProperty email;
