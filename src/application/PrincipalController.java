@@ -15,6 +15,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class PrincipalController {
@@ -34,7 +37,21 @@ public class PrincipalController {
     @FXML
     private Button btnSair;
 
+    @FXML
+    private TextField txtFiltro;
+
+    @FXML
+    private Button btnAdicionar;
+
+    @FXML
+    private Button btnEditar;
+
+    @FXML
+    private Button btnExcluir;
+
     private UsuarioService usuarioService;
+
+    private ObservableList<User> userList = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
@@ -44,19 +61,54 @@ public class PrincipalController {
         emailColumn.setCellValueFactory(cellData -> cellData.getValue().emailProperty());
 
         loadUsers();
+
+        btnEditar.setDisable(true);
+        btnExcluir.setDisable(true);
+
+        userTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                btnEditar.setDisable(false);
+                btnExcluir.setDisable(false);
+            } else {
+                btnEditar.setDisable(true);
+                btnExcluir.setDisable(true);
+            }
+        });
+
+        FilteredList<User> filteredData = new FilteredList<>(userList, b -> true);
+
+        txtFiltro.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(user -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (user.getName().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; 
+                } else if (user.getEmail().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; 
+                }
+                return false; 
+            });
+        });
+
+        SortedList<User> sortedData = new SortedList<>(filteredData);
+
+        sortedData.comparatorProperty().bind(userTable.comparatorProperty());
+
+        userTable.setItems(sortedData);
     }
 
     private void loadUsers() {
         Map<String, Map<String, String>> usuarios = usuarioService.getAllUsers();
-        ObservableList<User> userList = FXCollections.observableArrayList();
-
+        
         for (Map.Entry<String, Map<String, String>> entry : usuarios.entrySet()) {
             String email = entry.getKey();
             String nome = entry.getValue().get("nome");
             userList.add(new User(nome, email));
         }
-
-        userTable.setItems(userList);
     }
 
     public void setUserName(String name) {
@@ -77,6 +129,21 @@ public class PrincipalController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    void adicionarUsuario(ActionEvent event) {
+        System.out.println("Adicionar usuário");
+    }
+
+    @FXML
+    void editarUsuario(ActionEvent event) {
+        System.out.println("Editar usuário");
+    }
+
+    @FXML
+    void excluirUsuario(ActionEvent event) {
+        System.out.println("Excluir usuário");
     }
 
     public static class User {
