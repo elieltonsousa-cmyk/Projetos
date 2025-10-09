@@ -1,0 +1,68 @@
+/* General styling */
+.root {
+    -fx-background-color: #000000; /* Black background */
+}
+
+.label {
+    -fx-text-fill: #ffffff; /* White text for labels */
+}
+
+/* Text field styling */
+.text-field {
+    -fx-background-color: #333333;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #555555;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px;
+}
+
+/* Button styling */
+.button {
+    -fx-background-color: #ff0000; /* Red buttons */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.button:hover {
+    -fx-background-color: #cc0000; /* Darker red on hover */
+}
+
+/* Table view styling */
+.table-view {
+    -fx-background-color: #1a1a1a;
+    -fx-control-inner-background: #1a1a1a;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #1a1a1a;
+}
+
+.table-view .column-header {
+    -fx-background-color: #1a1a1a;
+    -fx-border-color: #555555;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #ffffff;
+}
+
+.table-row-cell {
+    -fx-background-color: #1a1a1a;
+    -fx-text-fill: #ffffff;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #2a2a2a;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #ff0000; /* Red selection */
+}
+
+/* Specific screen styling */
+.register-screen {
+    -fx-background-image: url("background.png");
+    -fx-background-size: cover;
+}
